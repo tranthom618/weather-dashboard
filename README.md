@@ -13,12 +13,13 @@ For the purposes of this project, the web application will be hosted on GitHub P
 
 ![Preview of navigation links](assets/images/readme-instructional.png?raw=true "README Example")
 
-The only user interactability will be on the left-hand side, showcasing a search bar & button, as well as buttons to view other cities quickly. The weather information will be the main splash displayed.
+The only user interactions will be on the left-hand side, showcasing a search bar & button, as well as buttons to view other cities quickly. The weather information for the current city will be the main splash displayed.
 
 ## Credits
 
 reset.css template sourced from http://meyerweb.com/eric/tools/css/reset/ --- v2.0 | 20110126 --- License: none (public domain)
-Starter code provided by University of Toronto - School of Continuing Studies - Coding Bootcamp.
+
+Various snippets of code have been adapted from various coursework from: University of Toronto - School of Continuing Studies - Coding Bootcamp.
 
 ## License
 

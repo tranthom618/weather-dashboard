@@ -1,0 +1,65 @@
+:root {
+    --light: #f6f6f6;
+    --darkblue: #2c3e50;
+    --lightblue: #3498db;
+    --red: #e74c3c;
+    --lightred: #f9eae7;
+    --lightyellow: #fff5d1;
+}
+  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+  
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 20px;
+  margin: 0;
+}
+
+
+
+.row {
+  margin: 0 0px;
+}
+
+/* Shared custom styles for headers */
+.header,
+.custom-modal-header,
+.custom-card-header,
+.btn-custom {
+  background-color: var(--darkblue);
+  color: var(--light);
+}
+  
+.btn-custom:hover {
+  color: var(--lightblue);
+}
+
+.body {
+  height: 100vh;
+  margin: 0px;
+  width: 100%;
+}
+
+.search-card {
+  display: flex;
+  padding: 1em;
+  background: #2222;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-card {
+  background:  #eaeaea;
+  padding:  2em;
+
+  border-radius: 30px;
+  width: 300%;
+}
