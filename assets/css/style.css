@@ -23,10 +23,17 @@ h6 {
   margin: 0;
 }
 
+.column-2 {
+  float: left;
+  width: 75%;
+  padding: 0 20px;
+  margin: 0;
+}
+
 
 
 .row {
-  margin: 0 0px;
+  margin: 15px 50px
 }
 
 /* Shared custom styles for headers */
@@ -82,5 +89,5 @@ h6 {
   padding:  2em;
 
   border-radius: 30px;
-  width: 300%;
+  width: 100%;
 }
