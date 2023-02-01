@@ -27,16 +27,27 @@
         
     <div class="row">
         <div class="column">
+            <!-- Search Card -->
             <div class = "search-card">
                 <div class = "search">
-                    <input type = "text" class = "search-bar">
+                    <input type = "text" class = "search-bar" placeholder="Search by City Name">
                     <button>🔍</button>
-                    <button class="prevCities">Vancouver</button>
                 </div>
+            </div>
+
+            <!-- Previously searched cities for quick-linking -->
+            <div class ="history-card">
+                <button class="prevCities0">Vancouver</button>
+                <button class="prevCities1">Vancouver</button>
+                <button class="prevCities2">Vancouver</button>
+                <button class="prevCities3">Vancouver</button>
+                <button class="prevCities4">Vancouver</button>
             </div>
         </div>
 
         <div class="column">
+
+            <!-- Main weather card for default or current city -->
             <div class = "city-card">
                 <div class = "weather">
                     <h2 class = "city">Weather in Toronto</h2>
@@ -47,6 +58,9 @@
                     <div class="humidity">Humidity: 33%</div>
                 </div>
             </div>
+            <div class="row" id= "forecast"></div>
+
+
         </div>
     </div>
 

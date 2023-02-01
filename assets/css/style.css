@@ -56,6 +56,27 @@ h6 {
   align-items: center;
 }
 
+.history-card {
+  display: block;
+  padding: 1em;
+  background: #2222;
+  justify-content: center;
+  margin: 1em;
+}
+
+.history-card button {
+  display: block;
+  width: 100;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 24px;
+}
+
+.history-card button:hover {
+  background-color: #bdb32d;
+}
+
 .city-card {
   background:  #eaeaea;
   padding:  2em;
