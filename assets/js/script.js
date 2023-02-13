@@ -38,16 +38,15 @@ var weatherForecast = {
             const { temp, humidity } = data.list[i].main;
             const { speed } = data.list[i].wind;
 
-            if (j < 5) {
-                // Uses children to select html .elements then adds the above variables within strings to display
-                forecastEl.children[j].children[0].innerText = dayjs(dt_txt).format('ddd, MMM D');
-                forecastEl.children[j].children[1].innerText = temp + "°C";
-                forecastEl.children[j].children[2].src = "https://openweathermap.org/img/wn/" + icon + ".png";
-                forecastEl.children[j].children[3].innerText = description.toUpperCase();
-                forecastEl.children[j].children[4].innerText = "Wind Speed: \n" + speed + " km/hr";
-                forecastEl.children[j].children[5].innerText = "Humidity: " + humidity + "%";
-                j += 1;
-            }
+            // Uses children to select html .elements then adds the above variables within strings to display
+            forecastEl.children[j].children[0].innerText = dayjs(dt_txt).format('ddd, MMM D');
+            forecastEl.children[j].children[1].innerText = temp + "°C";
+            forecastEl.children[j].children[2].src = "https://openweathermap.org/img/wn/" + icon + ".png";
+            forecastEl.children[j].children[3].innerText = description.toUpperCase();
+            forecastEl.children[j].children[4].innerText = "Wind Speed: \n" + speed + " km/hr";
+            forecastEl.children[j].children[5].innerText = "Humidity: " + humidity + "%";
+            j += 1;
+            
     }
 },
 }
