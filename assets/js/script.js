@@ -12,7 +12,7 @@ var weatherForecast = {
     // Fetch Function
     fetchForecast: function(city) {
     fetch(
-        "http://api.openweathermap.org/data/2.5/forecast?q=" 
+        "https://api.openweathermap.org/data/2.5/forecast?q=" 
         + city 
         + "&units=metric&appid=" 
         + APIweather
@@ -42,7 +42,7 @@ var weatherForecast = {
                 // Uses children to select html .elements then adds the above variables within strings to display
                 forecastEl.children[j].children[0].innerText = dayjs(dt_txt).format('ddd, MMM D');
                 forecastEl.children[j].children[1].innerText = temp + "°C";
-                forecastEl.children[j].children[2].src = "http://openweathermap.org/img/wn/" + icon + ".png";
+                forecastEl.children[j].children[2].src = "https://openweathermap.org/img/wn/" + icon + ".png";
                 forecastEl.children[j].children[3].innerText = description.toUpperCase();
                 forecastEl.children[j].children[4].innerText = "Wind Speed: \n" + speed + " km/hr";
                 forecastEl.children[j].children[5].innerText = "Humidity: " + humidity + "%";
@@ -60,7 +60,7 @@ var weatherCurrent = {
     // Fetch Function
     fetchWeather: function(city) {
     fetch(
-        "http://api.openweathermap.org/data/2.5/weather?q=" 
+        "https://api.openweathermap.org/data/2.5/weather?q=" 
         + city 
         + "&units=metric&appid=" 
         + APIweather
@@ -81,7 +81,7 @@ var weatherCurrent = {
 
     // Uses querySelector to select html .elements then adds the above variables within strings to display
     document.querySelector(".city").innerText = name + ", " + country.toUpperCase() + " - Current Weather Conditions";
-    document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+    document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".temp").innerText = temp + "°C";
     document.querySelector(".description").innerText = description.toUpperCase();
     document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/hr";
