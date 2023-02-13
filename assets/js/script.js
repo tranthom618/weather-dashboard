@@ -178,6 +178,10 @@ function init () {
     document.querySelector('#prevCities2').textContent = searchHistory[2];
     document.querySelector('#prevCities3').textContent = searchHistory[3];
     document.querySelector('#prevCities4').textContent = searchHistory[4];
+
+    // Calls both the curret and future forecast functions using the city being searched. From init(), it will default load the first saved city from search history.
+    // weatherForecast.fetchForecast(searchHistory[0]);
+    weatherCurrent.fetchWeather(searchHistory[0]);
 }
 init();
 
