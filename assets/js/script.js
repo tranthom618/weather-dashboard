@@ -9,7 +9,7 @@ var searchHistory = ["Toronto", "Vancouver", "Montreal", "New York", "Los Angele
 var weatherForecast = {
 
     // Fetch Function
-    fetchWeather: function(city) {
+    fetchForecast: function(city) {
     fetch(
         "http://api.openweathermap.org/data/2.5/forecast?q=" 
         + city 
@@ -106,13 +106,6 @@ var weatherForecast = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
        
 },
-
-   search: function() {
-    let searchCity = document.querySelector(".search-bar").value
-    searchHistory.unshift(searchCity); // Unshift to add to beginning of array.
-    searchHistory.pop(); // Pop will stop the array from infinitely building. Add (unshift) +1 at [0] then remove (pop) -1 the last in the array
-    this.fetchWeather(searchCity)
-}
 }
 
 
@@ -136,7 +129,7 @@ var weatherCurrent = {
 
     // Data endpoints 
     displayWeather: function (data) {
-    const { name } = data.city;
+    const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
@@ -150,6 +143,17 @@ var weatherCurrent = {
     document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
 },
 
+}
+
+
+function search() {
+    let searchCity = document.querySelector(".search-bar").value
+    searchHistory.unshift(searchCity); // Unshift to add to beginning of array.
+    searchHistory.pop(); // Pop will stop the array from infinitely building. Add (unshift) +1 at [0] then remove (pop) -1 the last in the array
+
+    // Calls both the curret and future forecast functions using the city being searched. Connected to their respective fetch functions as well.
+    // weatherForecast.fetchForecast(searchCity);
+    weatherCurrent.fetchWeather(searchCity);
 }
 
 
@@ -167,5 +171,12 @@ setInterval(displayTime, 1000);
 
 // Search Button Event Listener
 document.querySelector(".search button").addEventListener("click", function() {
-    weatherForecast.search();
+    search();
+})
+
+// Search Bar "Enter" Key Event Listener
+document.querySelector(".search-bar").addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
+        search();
+    }
 })
