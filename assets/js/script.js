@@ -156,6 +156,9 @@ function search() {
     // weatherForecast.fetchForecast(searchCity);
     weatherCurrent.fetchWeather(searchCity);
 
+    //Save the search history array to local storage
+    localStorage.setItem("localStorageSearch", JSON.stringify(searchHistory));    
+
     // Text Replacement for Search History Buttons for Live Updating
     document.querySelector('#prevCities0').textContent = searchHistory[0];
     document.querySelector('#prevCities1').textContent = searchHistory[1];
