@@ -130,12 +130,13 @@ var weatherCurrent = {
     // Data endpoints 
     displayWeather: function (data) {
     const { name } = data;
+    const { country } = data.sys;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
 
     // Uses querySelector to select html .elements then adds the above variables within strings to display
-    document.querySelector(".city").innerText = name + " - Current Weather Conditions";
+    document.querySelector(".city").innerText = name + ", " + country.toUpperCase() + " - Current Weather Conditions";
     document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".temp").innerText = temp + "°C";
     document.querySelector(".description").innerText = description.toUpperCase();
@@ -154,7 +155,30 @@ function search() {
     // Calls both the curret and future forecast functions using the city being searched. Connected to their respective fetch functions as well.
     // weatherForecast.fetchForecast(searchCity);
     weatherCurrent.fetchWeather(searchCity);
+
+    // Text Replacement for Search History Buttons for Live Updating
+    document.querySelector('#prevCities0').textContent = searchHistory[0];
+    document.querySelector('#prevCities1').textContent = searchHistory[1];
+    document.querySelector('#prevCities2').textContent = searchHistory[2];
+    document.querySelector('#prevCities3').textContent = searchHistory[3];
+    document.querySelector('#prevCities4').textContent = searchHistory[4];
 }
+
+function init () {
+
+    // Retrieve the local storage data from the client-side storage
+    searchHistory = JSON.parse(localStorage.getItem("localStorageSearch")) || ["Toronto", "Vancouver", "Montreal", "New York", "Los Angeles"];
+
+    // Text Filled for Search History Buttons from local storage
+    document.querySelector('#prevCities0').textContent = searchHistory[0];
+    document.querySelector('#prevCities1').textContent = searchHistory[1];
+    document.querySelector('#prevCities2').textContent = searchHistory[2];
+    document.querySelector('#prevCities3').textContent = searchHistory[3];
+    document.querySelector('#prevCities4').textContent = searchHistory[4];
+}
+init();
+
+
 
 
 
@@ -179,4 +203,52 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event) 
     if (event.key == "Enter") {
         search();
     }
+})
+
+
+
+// Event listeners for Group of Buttons for Search History
+// First Button of Search History
+document.querySelector("#prevCities0").addEventListener("click", function() {
+    let cityHist = searchHistory[0]; // Retrieves the first city saved in the array
+
+    // Calls the fetch functions for current weather and forecast with the first search history button/array
+    // weatherForecast.fetchForecast(cityHist);
+    weatherCurrent.fetchWeather(cityHist);
+})
+
+// Second Button of Search History
+document.querySelector("#prevCities1").addEventListener("click", function() {
+    let cityHist = searchHistory[1]; // Retrieves the first city saved in the array
+
+    // Calls the fetch functions for current weather and forecast with the first search history button/array
+    // weatherForecast.fetchForecast(cityHist);
+    weatherCurrent.fetchWeather(cityHist);
+})
+
+// Third Button of Search History
+document.querySelector("#prevCities2").addEventListener("click", function() {
+    let cityHist = searchHistory[2]; // Retrieves the first city saved in the array
+
+    // Calls the fetch functions for current weather and forecast with the first search history button/array
+    // weatherForecast.fetchForecast(cityHist);
+    weatherCurrent.fetchWeather(cityHist);
+})
+
+// Fourth Button of Search History
+document.querySelector("#prevCities3").addEventListener("click", function() {
+    let cityHist = searchHistory[3]; // Retrieves the first city saved in the array
+
+    // Calls the fetch functions for current weather and forecast with the first search history button/array
+    // weatherForecast.fetchForecast(cityHist);
+    weatherCurrent.fetchWeather(cityHist);
+})
+
+// Fifth Button of Search History
+document.querySelector("#prevCities4").addEventListener("click", function() {
+    let cityHist = searchHistory[4]; // Retrieves the first city saved in the array
+
+    // Calls the fetch functions for current weather and forecast with the first search history button/array
+    // weatherForecast.fetchForecast(cityHist);
+    weatherCurrent.fetchWeather(cityHist);
 })
