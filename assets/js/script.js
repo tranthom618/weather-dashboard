@@ -47,7 +47,6 @@ var weatherForecast = {
                 forecastEl.children[j].children[4].innerText = "Wind Speed: \n" + speed + " km/hr";
                 forecastEl.children[j].children[5].innerText = "Humidity: " + humidity + "%";
                 j += 1;
-                console.log(dt_txt);
             }
     }
 },
@@ -97,7 +96,7 @@ function search(city) {
     searchHistory.pop(); // Pop will stop the array from infinitely building. Add (unshift) +1 at [0] then remove (pop) -1 the last in the array
 
     // Calls both the curret and future forecast functions using the city being searched. Connected to their respective fetch functions as well.
-    weatherForecast.fetchForecast(searchCity);
+    weatherForecast.fetchForecast(city);
     weatherCurrent.fetchWeather(city);
 
     //Save the search history array to local storage
