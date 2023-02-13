@@ -91,3 +91,11 @@ h6 {
   border-radius: 30px;
   width: 100%;
 }
+
+#forecast-container {
+  background:  var(--lightred);
+  padding:  2em;
+  margin-top: 1em;
+  border-radius: 30px;
+  width: 100%;
+}
