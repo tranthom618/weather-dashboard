@@ -94,7 +94,7 @@ h6 {
 
 #forecast-container {
   background:  var(--lightred);
-  padding:  1em;
+  padding:  0.5em;
   margin-top: 1em;
   border-radius: 30px;
   width: 100%;
