@@ -21,7 +21,7 @@ reset.css template sourced from http://meyerweb.com/eric/tools/css/reset/ --- v2
 
 Various snippets of code have been adapted from various coursework from: University of Toronto - School of Continuing Studies - Coding Bootcamp.
 
-Research of various syntax, code, or ideas sourced from a culmination of Google Searches and Youtube Demonstrations.
+Research of various syntax, code, or ideas sourced from a culmination of Google Searches, Documentation Readings, Stack Overflow, Forums or Youtube Demonstrations.
 
 ## License
 
